@@ -1,0 +1,583 @@
+{
+  "ReportVersion": "2019.4.2",
+  "ReportGuid": "69392bc17deb522668b9afe2de5381ec",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportCreated": "/Date(1647177949000-0300)/",
+  "ReportChanged": "/Date(1647177949000-0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiODataSource",
+        "Name": "app_dadoscovidestados",
+        "Alias": "app.dadoscovidestados",
+        "Key": "d5c22f9d0ea93c1bc7ab212af4d3633b",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "regiao",
+            "Index": -1,
+            "NameInSource": "regiao",
+            "Alias": "regiao",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "estado",
+            "Index": -1,
+            "NameInSource": "estado",
+            "Alias": "estado",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "data",
+            "Index": -1,
+            "NameInSource": "data",
+            "Alias": "data",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "semanaepidemia",
+            "Index": -1,
+            "NameInSource": "semanaepidemia",
+            "Alias": "semanaepidemia",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "casosacumulado",
+            "Index": -1,
+            "NameInSource": "casosacumulado",
+            "Alias": "casosacumulado",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "casosnovos",
+            "Index": -1,
+            "NameInSource": "casosnovos",
+            "Alias": "casosnovos",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "obitosacumulado",
+            "Index": -1,
+            "NameInSource": "obitosacumulado",
+            "Alias": "obitosacumulado",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "obitosnovos",
+            "Index": -1,
+            "NameInSource": "obitosnovos",
+            "Alias": "obitosnovos",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "_objectKey",
+            "Index": -1,
+            "NameInSource": "_objectKey",
+            "Alias": "_objectKey",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "app",
+        "SqlCommand": "dadoscovidestados"
+      },
+      "1": {
+        "Ident": "StiDataTransformation",
+        "Name": "Data",
+        "Alias": "Data",
+        "Key": "79235f8518e22751c8f069e93341ac82",
+        "Columns": {
+          "0": {
+            "Name": "data",
+            "Index": -1,
+            "NameInSource": "data",
+            "Alias": "data",
+            "Type": "System.DateTime",
+            "Key": "8563ee85f807b2b217f3f4434f0ec73c",
+            "Ident": "Transform",
+            "Expression": "app_dadoscovidestados.data"
+          }
+        },
+        "NameInSource": "Categoria"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiODataDatabase",
+        "Name": "app",
+        "Alias": "app",
+        "ConnectionStringEncrypted": "n1JNiWhRe5HCSfn06whhFsDswYnIWdOBbA=="
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiDashboard",
+      "Name": "Dashboard1",
+      "Guid": "4d3bdd1a11242d35df2684ebc4217804",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiRegionMapElement",
+          "Name": "RegionMapElement1",
+          "Guid": "98923d07ff5d33de664761442fe52b89",
+          "ClientRectangle": "918.5,540,803,584",
+          "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Title": {
+            "Text": "Total de casos de Covid nos estados do Brasil entre Agosto e Setembro de 2020",
+            "ForeColor": "0,0,0",
+            "BackColor": "255,255,255",
+            "Font": ";12;Bold;",
+            "HorAlignment": "Center"
+          },
+          "KeyMeter": {
+            "Ident": "KeyMapMeter",
+            "Key": "b1a08e6292efb9001b7dc148b56add26",
+            "Expression": "app_dadoscovidestados.estado",
+            "Label": "estado"
+          },
+          "NameMeter": {
+            "Ident": "NameMapMeter",
+            "Key": "587df8ec40548aad042137bc1c735eba",
+            "Expression": "app_dadoscovidestados.estado",
+            "Label": "estado"
+          },
+          "ValueMeter": {
+            "Ident": "ValueMapMeter",
+            "Key": "bfdfe8c3e379faadef32cd6eed991df9",
+            "Expression": "Sum(app_dadoscovidestados.casosnovos)",
+            "Label": "casosnovos"
+          },
+          "MapIdent": "Brazil",
+          "DataFrom": "DataColumns",
+          "MapType": "Heatmap",
+          "ShowValue": true,
+          "ShortValue": true,
+          "ShowName": "Short",
+          "Style": "Green"
+        },
+        "1": {
+          "Ident": "StiTableElement",
+          "Name": "TableElement1",
+          "Guid": "6e6c363c83ed5f42b335a85c8d45da54",
+          "ClientRectangle": "212.5,22,1510,516",
+          "Border": ";;;;",
+          "Columns": {
+            "0": {
+              "Ident": "DimensionColumn",
+              "Key": "5a09c90108d9b933b57f2e6487df30f5",
+              "Expression": "app_dadoscovidestados.regiao",
+              "Label": "Região",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "ApplyFilter",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "1": {
+              "Ident": "DimensionColumn",
+              "Key": "d1ee1bf94a6c6d587f0ea95eecb6ebcf",
+              "Expression": "app_dadoscovidestados.estado",
+              "Label": "Estado",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "ApplyFilter",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "2": {
+              "Ident": "DimensionColumn",
+              "Key": "29cb03b492526acc0d427b38c748c66d",
+              "Expression": "app_dadoscovidestados.data",
+              "Label": "Data",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "ApplyFilter",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "3": {
+              "Ident": "DimensionColumn",
+              "Key": "04677a5085ed859101bf36c024083d2c",
+              "Expression": "app_dadoscovidestados.casosnovos",
+              "Label": "Novos casos",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "ApplyFilter",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "4": {
+              "Ident": "DimensionColumn",
+              "Key": "f7cf03aec5a486e074be7380fd0fb0cb",
+              "Expression": "app_dadoscovidestados.obitosnovos",
+              "Label": "Novos óbitos",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "ApplyFilter",
+                "HyperlinkDestination": "NewTab"
+              }
+            }
+          },
+          "TransformActions": {
+            "0": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Amapa",
+              "ValueTo": "Amapá",
+              "AfterGroupingData": true
+            },
+            "1": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Ceara",
+              "ValueTo": "Ceará",
+              "AfterGroupingData": true
+            },
+            "2": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "EspiritoSanto",
+              "ValueTo": "Espírito Santo",
+              "AfterGroupingData": true
+            },
+            "3": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Goias",
+              "ValueTo": "Goiás",
+              "AfterGroupingData": true
+            },
+            "4": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Maranhao",
+              "ValueTo": "Maranhão",
+              "AfterGroupingData": true
+            },
+            "5": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "MatoGrossoDoSul",
+              "ValueTo": "Mato Grosso do Sul",
+              "AfterGroupingData": true
+            },
+            "6": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "MinasGerais",
+              "ValueTo": "Minas Gerais",
+              "AfterGroupingData": true
+            },
+            "7": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Para",
+              "ValueTo": "Pará",
+              "AfterGroupingData": true
+            },
+            "8": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Paraiba",
+              "ValueTo": "Paraíba",
+              "AfterGroupingData": true
+            },
+            "9": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Parana",
+              "ValueTo": "Paraná",
+              "AfterGroupingData": true
+            },
+            "10": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Piaui",
+              "ValueTo": "Piauí",
+              "AfterGroupingData": true
+            },
+            "11": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "RioDeJaneiro",
+              "ValueTo": "Rio de Janeiro",
+              "AfterGroupingData": true
+            },
+            "12": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "RioGrandeDoNorte",
+              "ValueTo": "Rio Grande do Norte",
+              "AfterGroupingData": true
+            },
+            "13": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "RioGrandeDoSul",
+              "ValueTo": "Rio Grande do Sul",
+              "AfterGroupingData": true
+            },
+            "14": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "Rondonia",
+              "ValueTo": "Rondônia",
+              "AfterGroupingData": true
+            },
+            "15": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "SantaCatarina",
+              "ValueTo": "Santa Catarina",
+              "AfterGroupingData": true
+            },
+            "16": {
+              "Type": "Replace",
+              "Path": "Estado",
+              "ValueFrom": "SaoPaulo",
+              "ValueTo": "São Paulo",
+              "AfterGroupingData": true
+            }
+          },
+          "HeaderFont": ";10;;",
+          "FooterFont": ";10;;",
+          "Title": {
+            "Text": "Tabela de casos ",
+            "ForeColor": "68,84,106",
+            "Font": ";18;;",
+            "HorAlignment": "Center"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "FullRowSelect": true
+          },
+          "SizeMode": "Fit"
+        },
+        "2": {
+          "Ident": "StiChartElement",
+          "Name": "ChartElement1",
+          "Guid": "af2f340bbbbedee84206057d9f5c5964",
+          "ClientRectangle": "212.5,750,702,220",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Key": "c790e423e7106551926a039b886596a4",
+              "Expression": "Sum(app_dadoscovidestados.casosnovos)",
+              "Label": "Casos Novos",
+              "SeriesType": "Line"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Key": "b0ea319096d6da7cfde1dde8f0059982",
+              "Expression": "app_dadoscovidestados.data",
+              "Label": "Período "
+            }
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Title": {
+            "Text": "Gráfico",
+            "Visible": false
+          },
+          "ArgumentFormat": {
+            "Ident": "StiDateFormatService",
+            "StringFormat": "m"
+          },
+          "ValueFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalSeparator": ",",
+            "GroupSeparator": "."
+          },
+          "XAxis": {
+            "Labels": {
+              "Color": "0,0,0"
+            },
+            "Title": {
+              "Font": ";14;;",
+              "Color": "91,155,213"
+            }
+          },
+          "YAxis": {
+            "Title": {
+              "Font": ";14;;",
+              "Color": "91,155,213"
+            }
+          },
+          "Area": {
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          },
+          "Labels": {
+            "Position": "None"
+          },
+          "NegativeSeriesColors": {
+            "0": "222,58,112",
+            "1": "200,26,87",
+            "2": "200,26,87",
+            "3": "178,24,82",
+            "4": "156,20,78",
+            "5": "120,13,70"
+          }
+        },
+        "3": {
+          "Ident": "StiChartElement",
+          "Name": "ChartElement2",
+          "Guid": "ccd09468815b38559d2b675db12fdc56",
+          "ClientRectangle": "212.5,540,702,208",
+          "Border": ";;;;",
+          "BackColor": "255,255,255",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Key": "adf2978fa7f0c66f03f3a0c7916160c1",
+              "Expression": "Sum(app_dadoscovidestados.obitosnovos)",
+              "Label": "Óbitos Novos"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Key": "d9512fe5a105318b356369bfe808a1c8",
+              "Expression": "app_dadoscovidestados.data",
+              "Label": "Período"
+            }
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Title": {
+            "Text": "Gráfico",
+            "Visible": false
+          },
+          "ArgumentFormat": {
+            "Ident": "StiDateFormatService",
+            "StringFormat": "m"
+          },
+          "ValueFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalSeparator": ",",
+            "GroupSeparator": "."
+          },
+          "XAxis": {
+            "Title": {
+              "Font": ";14;;",
+              "Color": "255,0,0"
+            }
+          },
+          "YAxis": {
+            "Title": {
+              "Font": ";14;;",
+              "Text": "Óbitos Novos ",
+              "Color": "255,0,0"
+            }
+          },
+          "Area": {
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          },
+          "Labels": {
+            "Position": "None"
+          }
+        },
+        "4": {
+          "Ident": "StiIndicatorElement",
+          "Name": "GaugeElement1",
+          "Guid": "0a69c082f94117672cab73ab5538544b",
+          "ClientRectangle": "212.5,973,702,156",
+          "Border": ";;;;",
+          "TextFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalSeparator": ",",
+            "GroupSeparator": "."
+          },
+          "Value": {
+            "Ident": "ValueIndicatorMeter",
+            "Key": "e67037de1225155a25d40bcd610055fb",
+            "Expression": "Sum(app_dadoscovidestados.casosnovos)",
+            "Label": "casosnovos"
+          },
+          "Title": {
+            "Text": "Total de casos Agosto/Setembro",
+            "ForeColor": "34,42,53",
+            "BackColor": "255,255,255",
+            "Font": ";12;Bold;",
+            "HorAlignment": "Center"
+          },
+          "ForeColor": "255,0,0",
+          "GlyphColor": "112,173,71",
+          "Font": ";13;;",
+          "DashboardInteraction": {
+            "Ident": "Indicator",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          }
+        }
+      },
+      "Width": 2000,
+      "Height": 1200,
+      "Style": "Green",
+      "Border": ";;2;;;;;solid:Black"
+    }
+  }
+}

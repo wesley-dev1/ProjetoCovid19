@@ -1,0 +1,508 @@
+{
+  "ReportVersion": "2019.4.2",
+  "ReportGuid": "018d520d68d32dcb0c0e1f90adf9f2a2",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportCreated": "/Date(1647172133000-0300)/",
+  "ReportChanged": "/Date(1647172133000-0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "download",
+        "Alias": "download",
+        "Image": "GfvMfr9soPQ3iUplEtYGWiYaSJSCfNrvf6VhU0Zs3OjHYLBA5ksi26VcqCqC+ThR1WL9kHw5w5BXdwPjbWc6aX8PsSHBiyRwtV65A+zTKcD3DT1fX1Z4u1rxbkD9uO2FPhiT7RbQRZLghAgLc6u5HD7OAmIe6KJiDoDyxPBQZWeAprdPb8qP767T2lwe3Lnbnn9fEdICK55qC3OP8KD5HXisAHQrD9Tut97W/1r2tVLRubZeXz2rXTk1Q6G0aeVzDADajjGbkFpL6wEEAkhR6Ao/tSf/8Chtcbv28RGw"
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiODataSource",
+        "Name": "app_dadosbra",
+        "Alias": "app.dadosbra",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "pais",
+            "Index": -1,
+            "NameInSource": "pais",
+            "Alias": "pais",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "dia",
+            "Index": -1,
+            "NameInSource": "dia",
+            "Alias": "dia",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "semanaepidemia",
+            "Index": -1,
+            "NameInSource": "semanaepidemia",
+            "Alias": "semanaepidemia",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "casosacumulados",
+            "Index": -1,
+            "NameInSource": "casosacumulados",
+            "Alias": "casosacumulados",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "casosnovos",
+            "Index": -1,
+            "NameInSource": "casosnovos",
+            "Alias": "casosnovos",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "obitosacumulados",
+            "Index": -1,
+            "NameInSource": "obitosacumulados",
+            "Alias": "obitosacumulados",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "obitosnovos",
+            "Index": -1,
+            "NameInSource": "obitosnovos",
+            "Alias": "obitosnovos",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "recuperadosnovos",
+            "Index": -1,
+            "NameInSource": "recuperadosnovos",
+            "Alias": "recuperadosnovos",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "acompanhamentonovos",
+            "Index": -1,
+            "NameInSource": "acompanhamentonovos",
+            "Alias": "acompanhamentonovos",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "_objectKey",
+            "Index": -1,
+            "NameInSource": "_objectKey",
+            "Alias": "_objectKey",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "app",
+        "SqlCommand": "dadosbra"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiODataDatabase",
+        "Name": "app",
+        "Alias": "app",
+        "ConnectionStringEncrypted": "n1JNiWhRe5HCSfn06whhFsDswYnIWdOBbA=="
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiDashboard",
+      "Name": "Dashboard1",
+      "Guid": "d31ed86c31e76f7526ab9796f26f3861",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiChartElement",
+          "Name": "ChartElement1",
+          "Guid": "a05e5284522d2b3934a032a4d2b8b291",
+          "ClientRectangle": "102,280,671,460",
+          "Margin": {
+            "Left": 5,
+            "Top": 5,
+            "Right": 3,
+            "Bottom": 3
+          },
+          "Padding": {
+            "Left": 10,
+            "Top": 10,
+            "Right": 10,
+            "Bottom": 10
+          },
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Key": "14100b7d0ca07be0ca666c0ec7fe9c6a",
+              "Expression": "Sum(app_dadosbra.casosnovos)",
+              "Label": "Novos Casos",
+              "SeriesType": "StackedColumn"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Key": "1128c5c94de38bc0b60c8b6543bbb197",
+              "Expression": "app_dadosbra.dia",
+              "Label": "Período"
+            }
+          },
+          "ColorEach": true,
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Title": {
+            "Text": "Casos novos por dia",
+            "Font": ";14;Bold;",
+            "HorAlignment": "Center"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiDateFormatService",
+            "StringFormat": "M.dd"
+          },
+          "ValueFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalSeparator": ",",
+            "GroupSeparator": "."
+          },
+          "Area": {
+            "ColorEach": true,
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          },
+          "Labels": {
+            "Position": "None"
+          },
+          "SeriesColors": {
+            "0": "174,90,33",
+            "1": "202,106,40",
+            "2": "226,119,46",
+            "3": "239,145,100",
+            "4": "243,178,154",
+            "5": "246,204,190"
+          },
+          "ChartConditions": {
+            "0": {
+              "Ident": "StiChartElementCondition",
+              "KeyValueMeter": "14100b7d0ca07be0ca666c0ec7fe9c6a",
+              "Condition": "GreaterThan",
+              "DataType": "Numeric",
+              "Value": "50000",
+              "Color": "255,0,0"
+            },
+            "1": {
+              "Ident": "StiChartElementCondition",
+              "KeyValueMeter": "14100b7d0ca07be0ca666c0ec7fe9c6a",
+              "Condition": "LessThanOrEqualTo",
+              "DataType": "Numeric",
+              "Value": "50000",
+              "Color": "146,208,80"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiChartElement",
+          "Name": "ChartElement2",
+          "Guid": "0e55de321a95948aba5b598ce5c8390a",
+          "ClientRectangle": "102,800,671,680",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Key": "b3f31c91dbe624cbfc37340c0ba2e4cb",
+              "Expression": "Sum(app_dadosbra.obitosnovos)",
+              "Label": "Novos Óbitos"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Key": "e11be99385be71c6ac63ac3a8a423b34",
+              "Expression": "app_dadosbra.dia",
+              "Label": "Período"
+            }
+          },
+          "ColorEach": true,
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Title": {
+            "Text": "Óbitos por dia",
+            "Font": ";14;Bold;",
+            "HorAlignment": "Center"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiDateFormatService",
+            "StringFormat": "M.dd"
+          },
+          "ValueFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalSeparator": ",",
+            "GroupSeparator": "."
+          },
+          "Area": {
+            "ColorEach": true,
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          },
+          "Labels": {
+            "Position": "None"
+          },
+          "ChartConditions": {
+            "0": {
+              "Ident": "StiChartElementCondition",
+              "KeyValueMeter": "b3f31c91dbe624cbfc37340c0ba2e4cb",
+              "Condition": "GreaterThan",
+              "DataType": "Numeric",
+              "Value": "1200",
+              "Color": "255,0,0"
+            },
+            "1": {
+              "Ident": "StiChartElementCondition",
+              "KeyValueMeter": "b3f31c91dbe624cbfc37340c0ba2e4cb",
+              "Condition": "LessThan",
+              "DataType": "Numeric",
+              "Value": "1200",
+              "Color": "146,208,80"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiChartElement",
+          "Name": "ChartElement3",
+          "Guid": "f7d9fb3315f4d7dc3dd075d5d22a8520",
+          "ClientRectangle": "902,280,669,460",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Key": "1ce79ceea7c9fe80bc8ab4775fe5cf16",
+              "Expression": "Last(app_dadosbra.casosacumulados)",
+              "Label": "Casos Acumulados",
+              "SeriesType": "Line"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Key": "c181e5b36f789fc67eed6b7ba83a2ba8",
+              "Expression": "app_dadosbra.dia",
+              "Label": "Período"
+            }
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Title": {
+            "Text": "Casos acumulados de Fevereiro até Setembro de 2020",
+            "Font": ";14;Bold;",
+            "HorAlignment": "Center"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiDateFormatService",
+            "StringFormat": "M.dd"
+          },
+          "ValueFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalSeparator": ",",
+            "GroupSeparator": "."
+          },
+          "Area": {
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          },
+          "Marker": {
+            "Visible": "False"
+          },
+          "Labels": {
+            "Position": "None",
+            "AutoRotate": true
+          }
+        },
+        "3": {
+          "Ident": "StiTextElement",
+          "Name": "TextElement1",
+          "Guid": "925008ad43f7df3a0fc36cf29ed15ec2",
+          "ClientRectangle": "393,20,814,160",
+          "Padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "Text",
+            "OnHover": "ShowToolTip",
+            "OnClick": "OpenHyperlink",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Text": "<font face=\"Arial\" size=\"22\"><text-align=\"Center\">Dados do covid no Brasil entre Agosto e Setembro de 2020</text-align></font>",
+          "Title": {
+            "Text": "Texto",
+            "Visible": false
+          }
+        },
+        "4": {
+          "Ident": "StiChartElement",
+          "Name": "ChartElement4",
+          "Guid": "80e0cacd2e8aa4914df953fdc7335aed",
+          "ClientRectangle": "902,800,669,680",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Key": "b77cf50e83b9cb115eb1fe41ef771fe6",
+              "Expression": "Sum(app_dadosbra.casosacumulados)",
+              "Label": "Casos Acumulados",
+              "SeriesType": "Pie"
+            },
+            "1": {
+              "Ident": "ValueChartMeter",
+              "Key": "12e38507b0bd934d8896b78fb1052515",
+              "Expression": "Sum(app_dadosbra.acompanhamentonovos)",
+              "Label": "Acompanhamentos Novos",
+              "SeriesType": "Pie"
+            },
+            "2": {
+              "Ident": "ValueChartMeter",
+              "Key": "bc2cddfa8ddd5a0c8f0a1d45d28718a6",
+              "Expression": "Sum(app_dadosbra.casosnovos)",
+              "Label": "Casos Novos",
+              "SeriesType": "Pie"
+            },
+            "3": {
+              "Ident": "ValueChartMeter",
+              "Key": "e440836c757fa678575c196f2e94e870",
+              "Expression": "Sum(app_dadosbra.recuperadosnovos)",
+              "Label": "Recuperados Novos",
+              "SeriesType": "Pie"
+            },
+            "4": {
+              "Ident": "ValueChartMeter",
+              "Key": "5efc4300664421ddca17d44018478fb6",
+              "Expression": "Sum(app_dadosbra.obitosnovos)",
+              "Label": "Óbitos Novos",
+              "SeriesType": "Pie"
+            },
+            "5": {
+              "Ident": "ValueChartMeter",
+              "Key": "d0ac2f53c8a2326dfdd2fce710fada9c",
+              "Expression": "Sum(app_dadosbra.obitosacumulados)",
+              "Label": "Óbitos Acumulados",
+              "SeriesType": "Pie"
+            }
+          },
+          "ColorEach": true,
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Title": {
+            "Text": "Tipo de casos",
+            "Font": ";14;Bold;",
+            "HorAlignment": "Center"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "ValueFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "Legend": {
+            "Title": {
+              "Font": ";;Regular;",
+              "Color": "255,255,255"
+            },
+            "Labels": {
+              "Font": ";10;Bold;"
+            },
+            "HorAlignment": "Right",
+            "VertAlignment": "BottomOutside",
+            "Direction": "LeftToRight"
+          },
+          "Area": {
+            "ColorEach": true,
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          },
+          "Labels": {
+            "Position": "TwoColumns",
+            "Style": "PercentOfTotal"
+          }
+        }
+      },
+      "Width": 1600,
+      "Height": 1600,
+      "Style": "Green",
+      "Border": ";;2;;;;;solid:Black"
+    }
+  }
+}
