@@ -1,10 +1,10 @@
 {
   "ReportVersion": "2019.4.2",
-  "ReportGuid": "e523aadbfb2d24ea6574302baa98176b",
+  "ReportGuid": "fdc4eca7cc45dcd952200947706fce43",
   "ReportName": "Report",
   "ReportAlias": "Report",
-  "ReportCreated": "/Date(1647167149000-0300)/",
-  "ReportChanged": "/Date(1647167149000-0300)/",
+  "ReportCreated": "/Date(1647134749000-0300)/",
+  "ReportChanged": "/Date(1647134749000-0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Centimeters",
@@ -131,7 +131,7 @@
           "Ident": "StiRegionMapElement",
           "Name": "RegionMapElement1",
           "Guid": "98923d07ff5d33de664761442fe52b89",
-          "ClientRectangle": "918.5,540,803,584",
+          "ClientRectangle": "344,420,423,584",
           "Border": ";;;;",
           "DashboardInteraction": {
             "Ident": "RegionMap",
@@ -140,7 +140,7 @@
             "HyperlinkDestination": "NewTab"
           },
           "Title": {
-            "Text": "Total de casos de Covid nos estados do Brasil entre Agosto e Setembro de 2020",
+            "Text": "Casos de Covid entre Agosto e Setembro de 2020",
             "ForeColor": "0,0,0",
             "BackColor": "255,255,255",
             "Font": ";12;Bold;",
@@ -176,7 +176,7 @@
           "Ident": "StiTableElement",
           "Name": "TableElement1",
           "Guid": "6e6c363c83ed5f42b335a85c8d45da54",
-          "ClientRectangle": "212.5,22,1510,516",
+          "ClientRectangle": "10,2,757,416",
           "Border": ";;;;",
           "Columns": {
             "0": {
@@ -206,7 +206,7 @@
             "2": {
               "Ident": "DimensionColumn",
               "Key": "29cb03b492526acc0d427b38c748c66d",
-              "Expression": "app_dadoscovidestados.data",
+              "Expression": "MonthName(app_dadoscovidestados.data)",
               "Label": "Data",
               "DashboardInteraction": {
                 "Ident": "TableColumn",
@@ -375,7 +375,7 @@
           "Ident": "StiChartElement",
           "Name": "ChartElement1",
           "Guid": "af2f340bbbbedee84206057d9f5c5964",
-          "ClientRectangle": "212.5,750,702,220",
+          "ClientRectangle": "10,630,331,220",
           "Border": ";;;;",
           "Values": {
             "0": {
@@ -460,7 +460,7 @@
           "Ident": "StiChartElement",
           "Name": "ChartElement2",
           "Guid": "ccd09468815b38559d2b675db12fdc56",
-          "ClientRectangle": "212.5,540,702,208",
+          "ClientRectangle": "10,420,331,208",
           "Border": ";;;;",
           "BackColor": "255,255,255",
           "Values": {
@@ -533,31 +533,29 @@
         },
         "4": {
           "Ident": "StiIndicatorElement",
-          "Name": "GaugeElement1",
-          "Guid": "0a69c082f94117672cab73ab5538544b",
-          "ClientRectangle": "212.5,973,702,156",
+          "Name": "IndicatorElement1",
+          "Guid": "d60ef0712d6e0973dd3af39b12a703ad",
+          "ClientRectangle": "10,855,331,150",
           "Border": ";;;;",
           "TextFormat": {
             "Ident": "StiNumberFormatService",
             "NegativePattern": 1,
             "DecimalSeparator": ",",
-            "GroupSeparator": "."
+            "DecimalDigits": 0,
+            "GroupSeparator": ".",
+            "State": "DecimalDigits"
           },
           "Value": {
             "Ident": "ValueIndicatorMeter",
-            "Key": "e67037de1225155a25d40bcd610055fb",
+            "Key": "6bbda656121bc26d170e7472d8f811c8",
             "Expression": "Sum(app_dadoscovidestados.casosnovos)",
             "Label": "casosnovos"
           },
           "Title": {
-            "Text": "Total de casos Agosto/Setembro",
-            "ForeColor": "34,42,53",
-            "BackColor": "255,255,255",
+            "Text": "Total de casos - Agosto / Setembro",
             "Font": ";12;Bold;",
             "HorAlignment": "Center"
           },
-          "ForeColor": "255,0,0",
-          "GlyphColor": "112,173,71",
           "Font": ";13;;",
           "DashboardInteraction": {
             "Ident": "Indicator",
@@ -567,8 +565,8 @@
           }
         }
       },
-      "Width": 2000,
-      "Height": 1200,
+      "Width": 780,
+      "Height": 1000,
       "Style": "Green",
       "Border": ";;2;;;;;solid:Black"
     }
